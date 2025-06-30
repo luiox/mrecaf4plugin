@@ -13,15 +13,15 @@ ext {
     // For Recaf versions:
     //  - Releases: https://mvnrepository.com/artifact/software.coley/recaf-core
     //  - Snapshots: https://jitpack.io/#Col-E/Recaf  (see commits tab)
-    recafVersion = 'ad090e72db'
+    recafVersion = '5eaa2dbd58'
     recafSnapshots = true
 
     // This should point to the full name of the class that 'implements Plugin'
     pluginMainClass = 'org.example.plugin.ExamplePlugin'
 
     // These variables will change what plugin information is declared
-    pluginName = 'Example plugin'
-    pluginDesc = 'This example plugin does nothing special, but you can add to it'
+    pluginName = 'mrecaf4plugin'
+    pluginDesc = 'recaf4plugin adapter for morpher'
     pluginId = group + '.' + project.name
 }
 
@@ -76,7 +76,8 @@ dependencies {
         implementation "software.coley:recaf-core:${recafVersion}"
         implementation "software.coley:recaf-ui:${recafVersion}"
     }
-
+    implementation "org.kordamp.ikonli:ikonli-carbonicons-pack:12.3.1"
+    implementation "com.github.luiox:morpher-api:v1.6"
     testImplementation platform('org.junit:junit-bom:5.11.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
@@ -121,7 +122,13 @@ tasks.register('runRecaf', JavaExec) {
     // Setup the classpath for the task
     classpath sourceSets.main.runtimeClasspath
     mainClass = "software.coley.recaf.Main"
+    sourceCompatibility = 22
+    targetCompatibility = 22
 
     // Add our plugin
     args("-r", "build/libs")
+
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
 }
