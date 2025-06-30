@@ -33,8 +33,8 @@ public final class PluginClassLoader {
     public PluginClassLoader() {
     }
 
-    public Map<String,List<AbstractPass>> scanAndLoadPassPlugin() {
-       Map<String, List<AbstractPass>>  passes = new HashMap<>();
+    public Map<String, List<AbstractPass>> scanAndLoadPassPlugin() {
+        Map<String, List<AbstractPass>> passes = new HashMap<>();
 
         logger.info("Type.getInternalName(IPassPlugin.class)) = {}", PluginDesc);
         // 扫描path下的jar
@@ -89,11 +89,12 @@ public final class PluginClassLoader {
 
                                     } catch (IOException | InvocationTargetException | InstantiationException |
                                              IllegalAccessException | NoSuchMethodException e) {
-                                        logger.error(e.getMessage());;
+                                        logger.error(e.getMessage());
+                                        ;
                                     }
                                 }
                             });
-                            if(!passList.isEmpty() && !passName.get().isEmpty()){
+                            if (!passList.isEmpty() && !passName.get().isEmpty()) {
                                 passes.put(passName.get(), passList);
                             }
                         } catch (IOException e) {
