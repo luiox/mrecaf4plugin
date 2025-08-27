@@ -13,7 +13,7 @@ ext {
     // For Recaf versions:
     //  - Releases: https://mvnrepository.com/artifact/software.coley/recaf-core
     //  - Snapshots: https://jitpack.io/#Col-E/Recaf  (see commits tab)
-    recafVersion = '971b1f033e'
+    recafVersion = 'bd5881d42a'
     recafSnapshots = true
 
     // This should point to the full name of the class that 'implements Plugin'
@@ -78,7 +78,8 @@ dependencies {
         implementation "software.coley:recaf-ui:${recafVersion}"
     }
     implementation "org.kordamp.ikonli:ikonli-carbonicons-pack:12.3.1"
-    implementation "com.github.luiox:morpher-api:v1.8"
+    // https://jitpack.io/#luiox/morpher-api
+    implementation "com.github.luiox:morpher-api:v1.9"
     testImplementation platform('org.junit:junit-bom:5.11.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

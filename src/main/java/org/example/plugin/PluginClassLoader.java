@@ -27,7 +27,7 @@ import java.util.jar.JarFile;
 
 public final class PluginClassLoader {
     private static final Logger logger = Logging.get(PluginClassLoader.class);
-    String SeachPath = "D:\\WorkSpace\\mc\\morpher\\morpher-api\\morpher-example\\build\\libs";
+    String SeachPath = "D:\\WorkSpace\\monocodes\\morpher-api\\morpher-passes\\build\\libs";
     String PluginDesc = Type.getInternalName(IPassPlugin.class);
 
     public PluginClassLoader() {

@@ -4,7 +4,6 @@ import com.github.luiox.morpher.transformer.IPassContext;
 import com.github.luiox.morpher.transformer.MethodPass;
 import com.github.luiox.morpher.transformer.PassInfo;
 import jakarta.annotation.Nonnull;
-import org.jetbrains.annotations.NotNull;
 import org.objectweb.asm.tree.ClassNode;
 import software.coley.recaf.info.JvmClassInfo;
 import software.coley.recaf.services.transform.JvmClassTransformer;
@@ -24,7 +23,7 @@ public class MethodPassAdapterTransformer implements JvmClassTransformer {
     }
 
     @Override
-    public void setup(@NotNull JvmTransformerContext context, @NotNull Workspace workspace) {
+    public void setup(@Nonnull JvmTransformerContext context, @Nonnull Workspace workspace) {
         methodPass.doInitialization(passContext);
     }
 
@@ -45,7 +44,7 @@ public class MethodPassAdapterTransformer implements JvmClassTransformer {
     }
 
     @Override
-    public @NotNull String name() {
+    public @Nonnull String name() {
         var annotation = methodPass.getClass().getAnnotation(PassInfo.class);
         // If the annotation is not present, we return the class name.
         if (annotation == null) {

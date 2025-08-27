@@ -3,7 +3,7 @@ package org.example.plugin;
 import com.github.luiox.morpher.info.ClassInfo;
 import com.github.luiox.morpher.transformer.IPassContext;
 import com.github.luiox.morpher.transformer.PassHelper;
-import org.jetbrains.annotations.NotNull;
+import jakarta.annotation.Nonnull;
 import org.objectweb.asm.tree.ClassNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,7 @@ public class RecafPassHelperImpl implements PassHelper {
     }
 
     @Override
-    public @NotNull Map<String, ClassInfo> buildClassInfo(@NotNull IPassContext ctx) {
+    public @Nonnull Map<String, ClassInfo> buildClassInfo(@Nonnull IPassContext ctx) {
         if (!(ctx instanceof RecafAdapterPassContext context)) {
             throw new IllegalArgumentException("ctx must be an instance of PassContext");
         }
@@ -39,13 +39,18 @@ public class RecafPassHelperImpl implements PassHelper {
     }
 
     @Override
-    public void iterateClassNodeWithInfo(@NotNull IPassContext ctx,
-                                         @NotNull Map<String, ClassInfo> infos,
+    public void iterateClassNodeWithInfo(@Nonnull IPassContext ctx,
+                                         @Nonnull Map<String, ClassInfo> infos,
                                          int rflag,
                                          int wflag,
-                                         @NotNull Consumer<ClassNode> consumer) {
+                                         @Nonnull Consumer<ClassNode> consumer) {
         if (!(ctx instanceof RecafAdapterPassContext context)) {
             throw new IllegalArgumentException("ctx must be an instance of PassContext");
         }
+    }
+
+    @Override
+    public void addLibPath(@Nonnull String s) {
+
     }
 }
