@@ -17,7 +17,7 @@ ext {
     recafSnapshots = true
 
     // This should point to the full name of the class that 'implements Plugin'
-    pluginMainClass = 'org.example.plugin.ExamplePlugin'
+    pluginMainClass = 'com.github.luiox.plugin.MRecaf4Plugin'
 
     // These variables will change what plugin information is declared
     pluginName = 'mrecaf4plugin'

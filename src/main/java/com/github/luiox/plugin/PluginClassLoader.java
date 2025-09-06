@@ -1,4 +1,4 @@
-package org.example.plugin;
+package com.github.luiox.plugin;
 
 import com.github.luiox.morpher.plugin.IPassPlugin;
 import com.github.luiox.morpher.plugin.PluginInfo;

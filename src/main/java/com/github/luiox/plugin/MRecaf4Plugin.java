@@ -1,4 +1,4 @@
-package org.example.plugin;
+package com.github.luiox.plugin;
 
 import com.github.luiox.morpher.transformer.AbstractPass;
 import jakarta.annotation.Nonnull;
@@ -20,8 +20,8 @@ import java.util.Map;
 
 @Dependent
 @PluginInformation(id = "##ID##", version = "##VERSION##", name = "##NAME##", description = "##DESC##")
-public class ExamplePlugin implements Plugin {
-    private static final Logger logger = Logging.get(ExamplePlugin.class);
+public class MRecaf4Plugin implements Plugin {
+    private static final Logger logger = Logging.get(MRecaf4Plugin.class);
     private final Instance<MainMenu> mainMenus;
     WorkspaceManager workspaceManager;
     RecafAdapterPassContext passContext;
@@ -33,7 +33,7 @@ public class ExamplePlugin implements Plugin {
     // You can inject Recaf's services in this constructor.
     //  - https://recaf.coley.software/dev/plugins-and-scripts/plugins.html
     @Inject
-    public ExamplePlugin(@Nonnull Instance<MainMenu> mainMenus,
+    public MRecaf4Plugin(@Nonnull Instance<MainMenu> mainMenus,
                          @Nonnull WorkspaceManager workspaceManager,
                          @Nonnull ContextMenuProviderService contextMenuProviderService) {
         this.mainMenus = mainMenus;

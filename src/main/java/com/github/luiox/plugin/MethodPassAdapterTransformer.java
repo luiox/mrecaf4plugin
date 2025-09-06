@@ -1,4 +1,4 @@
-package org.example.plugin;
+package com.github.luiox.plugin;
 
 import com.github.luiox.morpher.transformer.IPassContext;
 import com.github.luiox.morpher.transformer.MethodPass;
