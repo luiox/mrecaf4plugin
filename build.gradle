@@ -4,7 +4,7 @@ plugins {
     id 'top.hendrixshen.replace-token'  version '1.1.2'
 }
 
-group = 'org.example'
+group = 'com.github.luiox'
 version = '1.0.0'
 
 ext {
@@ -22,7 +22,7 @@ ext {
     // These variables will change what plugin information is declared
     pluginName = 'mrecaf4plugin'
     pluginDesc = 'recaf4plugin adapter for morpher'
-    pluginId = group + '.' + project.name
+    pluginId = group + '.' + pluginName
 }
 
 // Recaf requires JDK 22 or higher.

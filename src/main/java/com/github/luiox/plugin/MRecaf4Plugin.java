@@ -5,13 +5,16 @@ import jakarta.annotation.Nonnull;
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
+import org.kordamp.ikonli.carbonicons.CarbonIcons;
 import org.slf4j.Logger;
 import software.coley.recaf.analytics.logging.Logging;
 import software.coley.recaf.plugin.Plugin;
 import software.coley.recaf.plugin.PluginInformation;
 import software.coley.recaf.services.cell.context.ContextMenuProviderService;
 import software.coley.recaf.services.workspace.WorkspaceManager;
+import software.coley.recaf.ui.control.FontIconView;
 import software.coley.recaf.ui.menubar.MainMenu;
 import software.coley.recaf.util.FxThreadUtil;
 
@@ -49,15 +52,18 @@ public class MRecaf4Plugin implements Plugin {
         FxThreadUtil.run(() -> {
             var ins = mainMenus.get();
 
-            ins.getAnalysisMenu().getItems().add(new MenuItem("Morpher Passes"));
+            var pluginMenu = new Menu("Morpher", new FontIconView(CarbonIcons.DEVELOPMENT));
+            pluginMenu.getItems().add(new MenuItem("ControlFlow", new FontIconView(CarbonIcons.DEVELOPMENT)));
+            pluginMenu.getItems().add(new MenuItem("Transform", new FontIconView(CarbonIcons.DEVELOPMENT)));
+            ins.getMenus().add(pluginMenu);
 
             if (passMap.isEmpty()) {
                 logger.warn("No pass plugin found");
                 return;
             }
-            for (var entry : passMap.entrySet()) {
-                ins.getMenus().add(new MPluginMenu(workspaceManager, entry.getKey(), entry.getValue()));
-            }
+//            for (var entry : passMap.entrySet()) {
+//                ins.getMenus().add(new MPluginMenu(workspaceManager, entry.getKey(), entry.getValue()));
+//            }
 
 //			MenuItem itemViewImport = new ActionMenuItem("importPass", () -> {
 
